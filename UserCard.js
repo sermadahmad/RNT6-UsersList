@@ -5,7 +5,7 @@ const UserCard = ({user}) => {
   const {image, name, bio} = user;
   return (
     <View style = {styles.box}>
-      <Image source = {image} style = {styles.image} />
+      <Image source = {{uri: image}} style = {styles.image} />
       <View style = {styles.textBox}>
         <Text style = {styles.name}>{name}</Text>
         <Text style = {styles.bio}>{bio}</Text>
@@ -21,13 +21,15 @@ const styles = StyleSheet.create({
   box: {
     flexDirection: 'row',
     padding:5,
-    margin:5,
+    marginHorizontal: 10,
+    marginVertical: 5,
+    borderRadius:10,
+    backgroundColor: 'white',
     elevation:5,
     shadowColor:'black',
     shadowOffset:{width:0, height:2},
     shadowOpacity:0.4,
     shadowRadius:5,
-    borderRadius:10,
   },
   image: {
     width : 50,
